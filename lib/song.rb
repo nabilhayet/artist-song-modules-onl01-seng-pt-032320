@@ -3,8 +3,12 @@ require_relative '../lib/concerns/memorable'
 require_relative '../lib/concerns/paramable'
 
 class Song
+  extend Memorable::ClassMethods
+  include Memorable::InstanceMethods
+  extend Findable 
   attr_accessor :name
   attr_reader :artist
+  
 
   @@songs = []
 
@@ -12,8 +16,6 @@ class Song
     self.class.all << self
 end
 
-  extend Memorable::ClassMethods
-  include Memorable::InstanceMethods
   
 
   def self.find_by_name(name)
