@@ -1,6 +1,4 @@
 require 'pry'
-require_relative '../lib/concerns/memorable'
-require_relative '../lib/concerns/paramable'
 
 class Artist
   extend Memorable::ClassMethods
